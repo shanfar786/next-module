@@ -1,0 +1,15 @@
+{
+  "/_app": "pages/_app.js",
+  "/dashboard/attractions": "pages/dashboard/attractions.html",
+  "/dashboard/covid-19": "pages/dashboard/covid-19.html",
+  "/dashboard/destination": "pages/dashboard/destination.html",
+  "/dashboard/travel-tips": "pages/dashboard/travel-tips.html",
+  "/dashboard/travel-tips/page-attraction": "pages/dashboard/travel-tips/page-attraction.html",
+  "/dashboard/your-trip-score": "pages/dashboard/your-trip-score.html",
+  "/help": "pages/help.html",
+  "/": "pages/index.html",
+  "/trip-result": "pages/trip-result.html",
+  "/_error": "pages/_error.js",
+  "/_document": "pages/_document.js",
+  "/404": "pages/404.html"
+}
