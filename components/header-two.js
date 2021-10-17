@@ -12,7 +12,8 @@ const HeaderTwo = () => {
       mobileMenu();
     };
   });
-
+  
+  
   const handleScroll = () => {
     if (window.scrollY > 70) {
       setSticky(true);
@@ -20,6 +21,13 @@ const HeaderTwo = () => {
       setSticky(false);
     }
   };
+  const changeColor = () => {
+    if(window.scrollY >= 80){
+        setColor(true)
+    }else{
+        setColor(false)
+    }
+}
 
   const mobileMenu = () => {
     let subMenuColse = document.querySelectorAll(".sub-nav-toggler");
@@ -38,7 +46,6 @@ const HeaderTwo = () => {
       });
     });
   };
-
   return (
     <header className="site-header header-two">
       <nav

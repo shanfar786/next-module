@@ -12,7 +12,8 @@ const HeaderOne = () => {
       mobileMenu();
     };
   });
-
+  
+  
   const handleScroll = () => {
     if (window.scrollY > 70) {
       setSticky(true);
@@ -20,6 +21,13 @@ const HeaderOne = () => {
       setSticky(false);
     }
   };
+  const changeColor = () => {
+    if(window.scrollY >= 80){
+        setColor(true)
+    }else{
+        setColor(false)
+    }
+}
 
   const mobileMenu = () => {
     let subMenuColse = document.querySelectorAll(".sub-nav-toggler");

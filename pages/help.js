@@ -11,8 +11,8 @@ const Help = () => {
                     <Container className="help-cont">
                         <div className="row form-section">
                             <Row>
-                                <Col xs={6} lg={6} sm={12}>
-                                    <div className="container-md">
+                                <Col lg={6} sm={12} >
+                                    <div className="container-md sm-box">
                                         <h2 className="help-head">Contact Us </h2>
                                         <p className="ar-hlp-p">Fill the below details for any enquiry on booking.</p>
                                         <div className="ar-empty"></div>
@@ -36,19 +36,20 @@ const Help = () => {
                                         </Form>
                                     </div>
                                 </Col>
-                                <Col xs={6} lg={6} sm={12}>
+                                <Col  lg={6} sm={12} className="ar-center d-md-block d-sm-none">
                                     <div className="help-sec2">
                                         <img src="/Group 1881.png" alt="Picture of the author"
                                             objectFit="none"
                                         /></div>
                                 </Col>
                             </Row>
+                           
                         </div>
                     </Container>
                 </div>
 
             </section>
-            <Footer />
+           
             <style jsx>{`
         .container {
             min-height: 80vh;
@@ -67,7 +68,9 @@ const Help = () => {
                 }
        
       `}</style>
+      <Footer />
         </>
+
 
     );
 };

@@ -3,35 +3,14 @@ import React from "react";
 import Link from "next/link";
 // import { withRouter } from "react-router";
 // import YourTripScore from "../components/your-trip-score";
-
+import { Row } from "react-bootstrap";
 const Sidebar = () => {
 
 
   return (
     <>
 
-      {/* <Nav className="col-md-12 d-none d-md-block bg-light sidebar"
-        activeKey="/home"
-        onSelect={selectedKey => alert(`selected ${selectedKey}`)}
-      >
-        <div className="sidebar-sticky"></div>
-        <Nav.Item>
-          <Link href="/dashboard/your-trip-score">Active</Link>
-        </Nav.Item>
-        <Nav.Item>
-          <Nav.Link eventKey="link-1">Link</Nav.Link>
-        </Nav.Item>
-        <Nav.Item>
-          <Nav.Link eventKey="link-2">Link</Nav.Link>
-        </Nav.Item>
-        <Nav.Item>
-          <Nav.Link eventKey="disabled" disabled>
-            Disabled
-          </Nav.Link>
-        </Nav.Item>
-      </Nav> */}
-
-      <div className="sidebar">
+      <div className="sidebar ">
         <div>
           <i className="fas fa-user"></i>
           <Link href="/dashboard/your-trip-score">
@@ -47,6 +26,17 @@ const Sidebar = () => {
             <a className=" sidebar-user ">Attractions</a></Link></div>
         <div> <Link href="/dashboard/travel-tips">
           <a className=" sidebar-user ">Travel tips</a></Link></div>
+      </div>
+
+      <div className="Container d-lg-none">
+        <Row>
+        <Link href="/dashboard/your-trip-score">
+            <a className="active sidebar-user" >Trip score</a></Link>
+            <Link href="/dashboard/your-trip-score">
+            <a className="active sidebar-user" >Trip score</a></Link>
+            <Link href="/dashboard/your-trip-score">
+            <a className="active sidebar-user" >Trip score</a></Link>
+        </Row>
       </div>
     </>
   );

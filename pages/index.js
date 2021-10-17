@@ -1,4 +1,4 @@
-// import React from "react";
+ import React from "react";
 import Layout from "../components/layout";
 import HeaderOne from "../components/header-one";
 import BannerOne from "../components/banner-one";

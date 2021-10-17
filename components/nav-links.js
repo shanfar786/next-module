@@ -7,6 +7,14 @@ import Form from "./form";
 
 function NavLinks() {
 
+  const changeColor = () => {
+    if(window.scrollY >= 80){
+        setColor(true)
+    }else{
+        setColor(false)
+    }
+}
+
   const [modalOpen, setModalOpen] = React.useState(false);
   return (
     <ul className="one-page-scroll-menu navigation-box">

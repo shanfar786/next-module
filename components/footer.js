@@ -1,23 +1,23 @@
 import React from "react";
-import { Container, Row, Col } from "react-bootstrap";
 // import logoImage from "../assets/images/logo-1-1.png";
-
+import { Container } from "react-bootstrap";
 const Footer = () => {
   return (
     <>
       <footer className="site-footer">
 
-        <Container>
+        <div className="container">
           <div className="inner-container">
-            <Row>
-              <Col lg={4} md={6} sm={12}>
+            <div className="row">
+              <div className="col-lg-4 col-sm-12" >
                 <div className="footer-widget">
                   <a href="index.html">
                     <img src="/airvays_logo-01.png" className="footer_logo" alt="Awesome Image" />
                   </a>
                   <div className="footer-para">
                     <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt et.</p>
-                  </div></div>
+                  </div>
+                  </div>
                 <div className="footer-widget">
 
 
@@ -35,8 +35,8 @@ const Footer = () => {
 
                   </div>
                 </div>
-              </Col>
-              <Col lg={3} md={6} sm={12}>
+              </div>
+              <div className="col-lg-3 col-sm-6" >
                 <div className="footer-widget">
                   <div className="widget-title">
                     <h3>Company</h3>
@@ -56,8 +56,8 @@ const Footer = () => {
                     </li>
                   </ul>
                 </div>
-              </Col>
-              <Col lg={3} md={6} sm={12}>
+              </div>
+              <div  className="col-sm-6 col-lg-3">
                 <div className="footer-widget">
                   <div className="widget-title">
                     <h3>Explore</h3>
@@ -75,8 +75,8 @@ const Footer = () => {
 
                   </ul>
                 </div>
-              </Col>
-              <Col lg={2} md={6} sm={12}>
+              </div>
+              <div className="col-lg-2 col-sm-6">
                 <div className="footer-widget">
                   <div className="widget-title">
                     <h3>Places</h3>
@@ -96,11 +96,11 @@ const Footer = () => {
                     </li>
                   </ul>
                 </div>
-              </Col>
+              </div>
 
-            </Row>
+            </div>
           </div>
-        </Container>
+        </div>
       </footer>
 
       <div className="bottom-footer text-center">

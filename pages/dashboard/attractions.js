@@ -15,10 +15,10 @@ function Attractions() {
             <Container >
                 <div className="result-main"></div>
                 <Row>
-                    <Col xs={2} id="sidebar-wrapper">
+                    <Col lg={2} sm={12} id="sidebar-wrapper">
                         <Sidebar />
                     </Col>
-                    <Col xs={10} id="page-content-wrapper">
+                    <Col lg={10} sm={12} id="page-content-wrapper">
 
                         <Container>
                             <div className="showcontent">

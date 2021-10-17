@@ -10,7 +10,7 @@ function TravelTips() {
     const [readMore, setReadMore] = useState(false);
     const extraContent = <div>
         <Row>
-            <Col xs={6}>
+            <Col lg={6} sm={12}>
                 <h4>10 ways to pack your bags..</h4>
                 <div className="attraction-img">
                     <img src="/bali-beach.png" alt="bali-beach" /></div>
@@ -31,10 +31,10 @@ function TravelTips() {
             <Container >
                 <div className="result-main"></div>
                 <Row>
-                    <Col xs={2} id="sidebar-wrapper">
+                    <Col lg={2} sm={12} id="sidebar-wrapper">
                         <Sidebar />
                     </Col>
-                    <Col xs={10} id="page-content-wrapper">
+                    <Col lg={10} sm={12} id="page-content-wrapper">
                         <Container>
                             <div className="showcontent">
                                 <h2 className="showcontent-heading">Travel tips for you !</h2>

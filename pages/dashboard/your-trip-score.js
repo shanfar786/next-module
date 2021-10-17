@@ -1,9 +1,11 @@
 import HeaderTwo from "../../components/header-two";
+import React from "react";
 import Layout from "../../components/layout";
 import Sidebar from "../../components/sidebar";
-import { Container, Row, Col } from "react-bootstrap";
+import { Container } from "react-bootstrap";
 import { CircularProgressbar } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
+import Footer from "../../components/footer";
 
 const percentage = 66;
 const percentage_1 = 0;
@@ -11,85 +13,85 @@ const percentage_2 = 46;
 const percentage_3 = 56;
 
 
-function YourTripScore(props) {
+function YourTripScore() {
     return (
-
+            <>
         <Layout pageTitle="Airvays">
             <HeaderTwo />
             <Container >
-                <div class="result-main"></div>
-                <Row>
-                    <Col xs={2} id="sidebar">
-                        <Sidebar />
-                    </Col>
-                    <Col xs={10} id="page-content">
+                <div class="result-main">
+                <div className="row">
+                    <div className="col-lg-2 col-sm-12" >
+                        <div id="sidebar">
+                        <Sidebar /></div>
+                    </div>
+                    <div className="col-lg-10 col-sm-12"  id="page-content">
                         <Container>
                             <div class="showcontent ">
                                 <h2 class="showcontent-heading">Your trip score</h2>
                                 <div class="covid-box">
-                                    <Row>
-
-                                        <Col xs={6}>
+                                    <div className="row">
+                                        <div className="col-lg-6 col-sm-12 " >
                                             <div class="row-covid">
-                                                <Row>
+                                                <div className="row">
 
-                                                    <Col xs={9}>
+                                                    <div className="col-9 ">
                                                         <div class="data-covid-box">
                                                             <h6>Covid-19</h6>
                                                             <p>covid-19 score on the scale of 0 - 100</p>
                                                         </div>
 
-                                                    </Col>
-                                                    <Col xs={3}>
-                                                        {/* <div style={{ paddingRight: 30 }}>{props.children}</div> */}
+                                                    </div>
+                                                    <div className="col-3 ar-center">
+                                                    
                                                         <div label="Default" class="percentage-1 align-middle" align="center">
                                                             <CircularProgressbar class="circularProgressbar-sm" value={percentage} text={`${percentage}%`} />
                                                         </div>
-                                                    </Col>
+                                                    </div>
 
-                                                </Row>
+                                                </div>
                                             </div>
                                             <div class="row-covid">
-                                                <Row>
-                                                    <Col xs={9}>
+                                                <div className="row">
+                                                    <div className="col-9 ">
                                                         <div class="data-covid-box">
                                                             <h6>Covid-19</h6>
                                                             <p>covid-19 score on the scale of 0 - 100</p>
                                                         </div>
 
-                                                    </Col>
-                                                    <Col xs={3}>
-                                                        {/* <div style={{ paddingRight: 30 }}>{props.children}</div> */}
+                                                    </div>
+                                                    <div className="col-3 ">
+                                                       
                                                         <div label="Default" class="percentage-1">
                                                             <CircularProgressbar class="circularProgressbar-sm" value={percentage_1} text={`${percentage_1}%`} />
                                                         </div>
-                                                    </Col>
-                                                </Row>
+                                                    </div>
+                                                </div>
                                             </div>
                                             <div class="row-covid">
-                                                <Row>
-                                                    <Col xs={9}>
+                                                <div className="row">
+                                                    <div className="col-9">
                                                         <div class="data-covid-box">
                                                             <h6>Covid-19</h6>
                                                             <p>covid-19 score on the scale of 0 - 100</p>
                                                         </div>
 
-                                                    </Col>
-                                                    <Col xs={3}>
+                                                    </div>
+                                                    <div className="col-3 ar-center">
                                                         {/* <div style={{ paddingRight: 30 }}>{props.children}</div> */}
                                                         <div label="Default" class="percentage-1">
                                                             <CircularProgressbar class="circularProgressbar-sm" value={percentage_2} text={`${percentage_2}%`} />
                                                         </div>
-                                                    </Col>
-                                                </Row>
+                                                    </div>
+                                                </div>
                                             </div>
-                                        </Col>
+                                        </div>
 
 
-                                        <Col xs={6}>
+                                        <div className="col-lg-6 col-sm-12 order-sm-2" >
                                             <div class="ov-score"><div class="ov-score-2">
                                                 <p class="text-center">Overall Score</p>
-                                                <div label="Default" class="percentage text-center" >
+                                                <div label="Default" class="percentage text-center " >
                                                     <CircularProgressbar value={percentage_3} text={`${percentage_3}%`} />
 
                                                 </div>
@@ -100,23 +102,27 @@ function YourTripScore(props) {
                                                     <p><img src="https://img.icons8.com/ios/25/000000/health-graph.png" />Covid-19 cases are decreasing</p>
                                                 </div>
                                             </div></div>
-                                        </Col>
-                                    </Row>
+                                        </div>
+                                    </div>
                                 </div>
                                 <p>DISCLAIMER</p>
                                 <p>Scores for Covid-19, Destination and Activities are derived based on the data from our supplier APIs and it may not be accurate to the real condition.</p>
                             </div>
+                           
                         </Container>
-                    </Col>
-                </Row>
+                    </div>
+                </div>
 
-
+                </div>
             </Container>
+            
+          
 
-
-
+       
 
         </Layout>
+        <Footer />
+        </>
 
     );
 };

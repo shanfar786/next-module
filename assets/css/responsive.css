@@ -7,6 +7,7 @@
     margin-bottom: 0;
   }
 
+
   .logo-box {
     width: 100%;
     float: none;
@@ -207,8 +208,7 @@
 
   .header-navigation .container {
     display: block;
-    padding-right: 15px;
-    padding-left: 15px;
+    
     position: relative;
   }
 
@@ -258,14 +258,15 @@
     margin: 0;
   }
 
+
   .header-navigation .main-navigation {
     float: none;
     width: 100%;
     display: none;
     text-align: left;
-    background: #181818;
+    background: #ffffff;
     max-height: 70vh;
-    overflow-y: scroll;
+    
   }
   .header-navigation .main-navigation.active {
     display: block;
@@ -309,15 +310,124 @@
   }
 
   .site-header.header-one .header-navigation .container {
-    padding-right: 15px !important;
+    max-width: 90%;
   }
 
   .site-header.home-page-two .header-navigation .container .menu-toggler {
     color: #fff;
   }
 }
+.d-lg-none{
+  display: none;
+}
+@media (max-width: 768px){
+.header-navigation ul.navigation-box > li > a {
+    color: #1C2460 !important;
+}
+.ov-score {
+  background: #fff;
+  margin: 0;
+  box-shadow: 0px 20px 55px #00000017;
+  border-radius: 5px;
+  padding: 10px 15px;
+}
 
-@media (max-width: 320px) {
+.ar-travel {
+    padding: 20px 25px;
+}
+.pop-box{
+  max-width: 90%;
+}
+#wrapper{
+  background: #F6F8F9;
+}
+.showcontent {
+  padding: 20px 10px; 
+  background: #F6F8F9 ; 
+   -webkit-box-shadow: none; 
+   box-shadow: none;
+  border-radius: 0px;
+}
+.col-sm-12{
+  padding-right: 0px; 
+   padding-left: 0px;
+}
+.result-main {
+  padding: 20px 0;
+}
+.CircularProgressbar {
+  width: 90%;
+}
+.header-two{
+  padding: .5rem 20px .5rem 20px;
+
+}
+
+
+.row-covid {
+  display: block;
+    -webkit-justify-content: center;
+    -moz-box-pack: center;
+    justify-content: center;
+    -webkit-align-items: center;
+    -moz-box-align: center;
+    align-items: center;
+
+  background: #fff;
+}
+.data-covid-box>p {
+  line-height: 20px;
+  font-size: 12px;
+  color: #333333;
+  font-weight: 400;
+}
+.d-sm-none{
+  display: none;
+}
+.sm-box{
+  padding-top:20px;
+  padding-bottom: 20px;
+}
+.header-navigation .container {
+ max-width: 85%;
+}
+.airvays-section {
+  padding: 20px 0;
+}
+.help-cont{
+  max-width: 100%;
+}
+.form-section {
+  padding: 0px; 
+  -webkit-box-shadow: 0px 20px 55px #00000014;
+  box-shadow: -10px 50px 55px #00000014;
+}
+
+.airvays-content>h1 {
+  color: #1C2460;
+  font-size: 28px;
+  font-weight: 500;
+}
+.airvays-content>p {
+  color: #1C2460;
+  font-size: 20px !important;
+  font-weight: 400;
+  margin-bottom: 40px;
+}
+header.header-one .header-navigation .container {
+  padding-left: 30px !important;
+}
+}
+
+
+
+
+@media (min-width: 769px){
+  .header-navigation ul.navigation-box > li > a {
+      color: #ffffff !important;
+  }
+  }
+@media only screen and (max-width: 320px) {
   .header-navigation .container .right-side-box {
     display: none;
   }
