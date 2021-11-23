@@ -1,0 +1,31 @@
+version: 0.2
+
+phases:
+  pre_build:
+    commands:
+      - echo Install kubectl utility...
+      - curl -LO https://dl.k8s.io/release/v1.21.4/bin/linux/amd64/kubectl
+      - chmod +x kubectl
+      - mv kubectl /usr/local/bin/
+      - wget https://github.com/kubernetes/kops/releases/download/v1.21.1/kops-linux-amd64
+      - chmod +x kops-linux-amd64
+      - mv kops-linux-amd64 /usr/local/bin/kops
+      - wget https://get.helm.sh/helm-v3.7.0-linux-amd64.tar.gz
+      - tar -xzf helm-v3.7.0-linux-amd64.tar.gz
+      - mv linux-amd64/helm /usr/local/bin
+      - helm plugin install https://github.com/hypnoglow/helm-s3.git
+
+  build:
+    commands:
+      - kubectl version --client
+      - kops version
+      - helm version
+  post_build:
+    commands:
+      - echo Build completed on `date`
+      - export KOPS_STATE_STORE=s3://k8s.airvays.com
+      - kops export kubecfg --admin --name k8s.airvays.com
+      - kubectl version --short
+      - helm repo add airvays s3://charts.airvays.com/charts
+      - helm search repo airvays
+      - helm upgrade travelplanner airvays/travel-planner -i -n dev

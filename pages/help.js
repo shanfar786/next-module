@@ -1,17 +1,20 @@
 import { Container, Row, Col, Button } from "react-bootstrap";
+import React from "react";
 import Form from 'react-bootstrap/Form'
+import Layout from "../components/layout";
 import HeaderTwo from "../components/header-two";
-import Footer from "../components/footer";
 const Help = () => {
     return (
         <>
+        <Layout pageTitle="Help">
             <HeaderTwo />
             <section className="airvays-section">
                 <div className="container">
                     <Container className="help-cont">
                         <div className="row form-section">
                             <Row>
-                                <Col lg={6} sm={12} >
+                                <Col xs={12} lg={6} sm={12} >
+                                   
                                     <div className="container-md sm-box">
                                         <h2 className="help-head">Contact Us </h2>
                                         <p className="ar-hlp-p">Fill the below details for any enquiry on booking.</p>
@@ -68,7 +71,8 @@ const Help = () => {
                 }
        
       `}</style>
-      <Footer />
+      </Layout>
+    
         </>
 
 

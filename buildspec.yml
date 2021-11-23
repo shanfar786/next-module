@@ -1,0 +1,64 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+      - wget https://get.helm.sh/helm-v3.7.0-linux-amd64.tar.gz
+      - tar -xzf helm-v3.7.0-linux-amd64.tar.gz
+      - mv linux-amd64/helm /usr/local/bin
+      - helm plugin install https://github.com/hypnoglow/helm-s3.git
+      # - wget https://github.com/codacy/helm-ssm/releases/download/2.2.1/helm-ssm-linux.tgz
+      # - tar -xzf helm-ssm-linux.tgz
+      # - helm plugin install .
+
+  pre_build:
+    commands:
+      - echo Logging in to Amazon ECR...
+      - aws ecr get-login-password --region $AWS_DEFAULT_REGION | docker login --username AWS --password-stdin 056127026219.dkr.ecr.ap-southeast-1.amazonaws.com
+      - REPOSITORY_URI=056127026219.dkr.ecr.ap-southeast-1.amazonaws.com/travel-planner
+      - COMMIT_HASH=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c 1-7)
+      - IMAGE_TAG=${COMMIT_HASH:=latest}
+      - helm repo add airvays s3://charts.airvays.com/charts
+  build:
+    commands:
+      - echo Build started on `date`
+      - echo Building the Docker image...
+      - docker build -t $REPOSITORY_URI:latest .
+      - docker tag $REPOSITORY_URI:latest $REPOSITORY_URI:$IMAGE_TAG
+  post_build:
+    commands:
+      - echo Build completed on `date`
+      - echo Pushing the Docker images...
+      - docker push $REPOSITORY_URI:latest
+      - docker push $REPOSITORY_URI:$IMAGE_TAG
+      - sed -i s/latest/$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c 1-7)/g chart/values.yaml
+      - cat chart/values.yaml
+      - helm package chart --version 1.0.$CODEBUILD_BUILD_NUMBER --app-version 1.0.$CODEBUILD_BUILD_NUMBER
+      - helm s3 push travel-planner-1.0.$CODEBUILD_BUILD_NUMBER.tgz airvays --force
+
+artifacts:
+    files: 
+      - deployspec.yml
+
+cache:
+  paths:
+    - '/root/.m2/**/*'
+    - '/root/.npm/**/*'
+
+# version: 0.2
+
+# phases:
+#   install:
+#     runtime-versions:
+#       nodejs: 14
+#     commands:
+#       - npm install
+#   build:
+#     commands:
+#       - npm run build
+#       - mv favicon.ico out/favicon.ico
+
+# artifacts:
+#   base-directory: out
+#   files:
+#     - "**/*"
